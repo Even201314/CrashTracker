@@ -1,7 +1,7 @@
 CrashTracker
 ========
 
-这是一个实时收集展示App崩溃日志的组件。
+这是一个实时收集展示App崩溃日志的组件。主要是参考改动macroday的AppCrashTracker而来
 
 当App发生崩溃时,自动跳转到CrashActivity页面,展示崩溃日志。
 
