@@ -33,76 +33,76 @@ public class CrashActivity extends AppCompatActivity {
         if (CrashTracker.isSdk()) {
             sb.append(getString(R.string.crash_tracker_sdk)).append(" : ").append
                     (getSpannableString(tracker.getSDK
-                            ())).append("\n");
+                            ())).append("\n\n");
         }
         if (CrashTracker.isAppVersion()) {
             sb.append(getString(R.string.crash_tracker_app_version)).append(" : ").append
                     (getSpannableString(tracker
-                            .getApp_Version())).append("\n");
+                            .getApp_Version())).append("\n\n");
         }
         if (CrashTracker.isClassName()) {
             sb.append(getString(R.string.crash_tracker_class_name)).append(" : ").append
                     (getSpannableString(tracker
-                            .getClassName())).append("\n");
+                            .getClassName())).append("\n\n");
         }
         if (CrashTracker.isCause()) {
             sb.append(getString(R.string.crash_tracker_cause)).append(" : ").append
                     (getSpannableString(tracker
-                            .getCause())).append("\n");
+                            .getCause())).append("\n\n");
         }
         if (CrashTracker.isStackTrace()) {
             sb.append(getString(R.string.crash_tracker_stack_trace)).append(" : ").append
                     (getSpannableString(tracker
-                            .getStack_Trace())).append("\n");
+                            .getStack_Trace())).append("\n\n");
         }
         if (CrashTracker.isMessage()) {
             sb.append(getString(R.string.crash_tracker_message)).append(" : ").append
                     (getSpannableString(tracker
-                            .getMessage())).append("\n");
+                            .getMessage())).append("\n\n");
         }
         if (CrashTracker.isLocalizedMessage()) {
             sb.append(getString(R.string.crash_tracker_localized_message)).append(" : ").append
                     (getSpannableString(tracker
-                            .getLocalized_Message())).append("\n");
+                            .getLocalized_Message())).append("\n\n");
         }
         if (CrashTracker.isBrand()) {
             sb.append(getString(R.string.crash_tracker_brand)).append(" : ").append
                     (getSpannableString(tracker
-                            .getBrand())).append("\n");
+                            .getBrand())).append("\n\n");
         }
         if (CrashTracker.isDevice()) {
             sb.append(getString(R.string.crash_tracker_device)).append(" : ").append
                     (getSpannableString(tracker
-                            .getDevice())).append("\n");
+                            .getDevice())).append("\n\n");
         }
         if (CrashTracker.isModel()) {
             sb.append(getString(R.string.crash_tracker_model)).append(" : ").append(tracker
-                    .getModel()).append("\n");
+                    .getModel()).append("\n\n");
         }
         if (CrashTracker.isProduct()) {
             sb.append(getString(R.string.crash_tracker_product)).append(" : ").append
                     (getSpannableString(tracker
-                            .getProduct())).append("\n");
+                            .getProduct())).append("\n\n");
         }
         if (CrashTracker.isIncremental()) {
             sb.append(getString(R.string.crash_tracker_incremental)).append(" : ").append
                     (getSpannableString(tracker
-                            .getIncremental())).append("\n");
+                            .getIncremental())).append("\n\n");
         }
         if (CrashTracker.isHeight()) {
             sb.append(getString(R.string.crash_tracker_height)).append(" : ").append
                     (getSpannableString(tracker
-                            .getHeight())).append("\n");
+                            .getHeight())).append("\n\n");
         }
         if (CrashTracker.isWidth()) {
             sb.append(getString(R.string.crash_tracker_width)).append(" : ").append
                     (getSpannableString(tracker
-                            .getWidth())).append("\n");
+                            .getWidth())).append("\n\n");
         }
         if (CrashTracker.isTablet()) {
             sb.append(getString(R.string.crash_tracker_tablet)).append(" : ").append
                     (getSpannableString(tracker
-                            .getTablet())).append("\n");
+                            .getTablet())).append("\n\n");
         }
         tvCrashInfo.setText(sb);
     }
