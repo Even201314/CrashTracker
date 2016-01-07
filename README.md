@@ -3,8 +3,7 @@ CrashTracker
 
 这是一个实时收集展示App崩溃日志的组件。
 
-![](https://github.com/Even201314/CrashTracker/raw/master/screenshot/crashTracker.png)  
-
+![](https://github.com/Even201314/CrashTracker/tree/master/raw/master/screenshot/crashTracker.png)  
 
 Download
 --------
