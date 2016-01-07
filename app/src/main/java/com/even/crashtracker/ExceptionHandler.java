@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Looper;
 import android.util.Log;
 
 import com.even.crashtracker.activity.CrashActivity;
@@ -57,21 +56,15 @@ public class ExceptionHandler implements
             Log.e("" + context.getPackageName(), "JSON Exception");
         }
 
-        new Thread() {
-            @Override
-            public void run() {
-                Looper.prepare();
-                Intent intent = new Intent(context, CrashActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("CrashInfo", jObjectData.toString());
-                intent.putExtras(bundle);
-                context.startActivity(intent);
-                Looper.loop();
-            }
-        }.start();
+        Intent intent = new Intent(context, CrashActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        Bundle bundle = new Bundle();
+        bundle.putString("CrashInfo", jObjectData.toString());
+        intent.putExtras(bundle);
+        context.startActivity(intent);
 
-        android.os.Process.killProcess(android.os.Process.myPid());
-        System.exit(10);
+//        android.os.Process.killProcess(android.os.Process.myPid());
+//        System.exit(10);
 
     }
 
