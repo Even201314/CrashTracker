@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Looper;
 import android.util.Log;
 
 import com.even.crashtracker.activity.CrashActivity;
@@ -24,6 +25,7 @@ import java.io.StringWriter;
 public class ExceptionHandler implements
         Thread.UncaughtExceptionHandler {
     private final Context context;
+    private JSONObject jObjectData;
 
     public ExceptionHandler(Context context) {
         this.context = context;
@@ -33,7 +35,7 @@ public class ExceptionHandler implements
         StringWriter stackTrace = new StringWriter();
         exception.printStackTrace(new PrintWriter(stackTrace));
 
-        JSONObject jObjectData = new JSONObject();
+        jObjectData = new JSONObject();
         try {
             jObjectData.put("ClassName", context.getClass().getSimpleName());
             jObjectData.put("Message", exception.getMessage());
@@ -55,10 +57,18 @@ public class ExceptionHandler implements
             Log.e("" + context.getPackageName(), "JSON Exception");
         }
 
-        Intent intent = new Intent(context, CrashActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("CrashInfo", jObjectData.toString());
-        context.startActivity(intent);
+        new Thread() {
+            @Override
+            public void run() {
+                Looper.prepare();
+                Intent intent = new Intent(context, CrashActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("CrashInfo", jObjectData.toString());
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+                Looper.loop();
+            }
+        }.start();
 
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(10);
