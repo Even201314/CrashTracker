@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.TextAppearanceSpan;
 import android.widget.TextView;
 
 import com.even.crashtracker.CrashTracker;
@@ -109,7 +110,8 @@ public class CrashActivity extends AppCompatActivity {
 
     private SpannableString getSpannableString(String content) {
         SpannableString spannableString = new SpannableString(content);
-        spannableString.setSpan(new ForegroundColorSpan(Color.GRAY), 0, spannableString.length(),
+        spannableString.setSpan(new TextAppearanceSpan(this, R.style.TextGray), 0,
+                spannableString.length(),
                 Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
         return spannableString;
     }
