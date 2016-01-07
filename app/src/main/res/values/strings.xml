@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">CrashTracker</string>
+
+    <string name="crash_tracker_class_name">ClassName</string>
+    <string name="crash_tracker_message">Message</string>
+    <string name="crash_tracker_localized_message">Localized_Message</string>
+    <string name="crash_tracker_cause">Cause</string>
+    <string name="crash_tracker_stack_trace">Stack_Trace</string>
+    <string name="crash_tracker_brand">Brand</string>
+    <string name="crash_tracker_device">Device</string>
+    <string name="crash_tracker_model">Model</string>
+    <string name="crash_tracker_product">Product</string>
+    <string name="crash_tracker_sdk">SDK</string>
+    <string name="crash_tracker_release">Release</string>
+    <string name="crash_tracker_incremental">Incremental</string>
+    <string name="crash_tracker_height">Height</string>
+    <string name="crash_tracker_width">Width</string>
+    <string name="crash_tracker_app_version">App_Version</string>
+    <string name="crash_tracker_tablet">Tablet</string>
 </resources>
