@@ -5,7 +5,7 @@ CrashTracker
 
 当App发生崩溃时,自动跳转到CrashActivity页面,展示崩溃日志。
 
-可以在开发阶段使用.尤其是像我这台接口松动，频繁断开连接的手机...
+可以在开发阶段使用.
 
 ![](https://github.com/Even201314/CrashTracker/blob/master/raw/master/screenshot/crashTracker.png)  
 
