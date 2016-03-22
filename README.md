@@ -13,6 +13,16 @@ Download
 --------
 
 Gradle:
+在project的build.gradle修改：
+```groovy
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+在app的build.gradle添加：
 ```groovy
 compile 'com.github.Even201314:CrashTracker:0.1.0'
 ```
